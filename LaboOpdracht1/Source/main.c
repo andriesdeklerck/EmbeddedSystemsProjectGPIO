@@ -10,7 +10,7 @@ int main()
 
 	char *server = "andriesraspi";
 	char *user = "root";
-	char *password = "RaspiAndries"; /* set me first */
+	char *password = "*****"; /* set me first */
 	char *database = "Opdracht1GPIO";
 
 	conn = mysql_init(NULL);
