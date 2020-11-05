@@ -1,6 +1,6 @@
 #include "PJ_RPI.h"
 #include <stdio.h>
-#include <mysql.h>
+#include <mysql/mysql.h>
 
 int main()
 {

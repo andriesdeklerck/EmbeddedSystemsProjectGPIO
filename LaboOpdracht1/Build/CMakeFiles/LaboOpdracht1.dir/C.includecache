@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Source/main.c
+PJ_RPI.h
+/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Source/PJ_RPI.h
+stdio.h
+-
+mysql/mysql.h
+-
+

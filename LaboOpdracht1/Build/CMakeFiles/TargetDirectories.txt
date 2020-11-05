@@ -1,0 +1,3 @@
+/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Build/CMakeFiles/rebuild_cache.dir
+/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Build/CMakeFiles/LaboOpdracht1.dir
+/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Build/CMakeFiles/edit_cache.dir
