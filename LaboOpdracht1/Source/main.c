@@ -1,6 +1,10 @@
 #include "PJ_RPI.h"
-#include <stdio.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 #include <mysql/mysql.h>
+//#include <string.h>
+
+#define GPIO_READ(g)  *(gpio.addr + 13) &= (1<<(g))
 
 int main()
 {
@@ -9,15 +13,14 @@ int main()
 	MYSQL_ROW row;
 
 	char *server = "andriesraspi";
-	char *user = "root";
-	char *password = "*****"; /* set me first */
+	char *user = "pi";
+	char *password = "RaspiAndries"; /* set me first */
 	char *database = "Opdracht1GPIO";
 
 	conn = mysql_init(NULL);
 
 	/* Connect to database */
-	if (!mysql_real_connect(conn, server,
-							user, password, database, 0, NULL, 0))
+	if (!mysql_real_connect(conn, server, user, password, database, 0, NULL, 0))
 	{
 		fprintf(stderr, "%s\n", mysql_error(conn));
 		exit(1);
@@ -52,7 +55,7 @@ int main()
 	}
 
 	/* close connection */
-	mysql_free_result(res);
+	//mysql_free_result(res);
 	mysql_close(conn);
 	if (map_peripheral(&gpio) == -1)
 	{
