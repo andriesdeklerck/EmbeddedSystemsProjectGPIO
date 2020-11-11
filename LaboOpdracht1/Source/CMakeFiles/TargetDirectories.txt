@@ -1,0 +1,7 @@
+/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Source/CMakeFiles/install/strip.dir
+/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Source/CMakeFiles/edit_cache.dir
+/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Source/CMakeFiles/LaboOpdracht1.dir
+/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Source/CMakeFiles/install/local.dir
+/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Source/CMakeFiles/rebuild_cache.dir
+/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Source/CMakeFiles/list_install_components.dir
+/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Source/CMakeFiles/install.dir

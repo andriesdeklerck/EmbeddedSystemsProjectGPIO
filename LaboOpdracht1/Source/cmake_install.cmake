@@ -44,7 +44,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/LaboOpdracht1"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE EXECUTABLE FILES "/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Build/LaboOpdracht1")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE EXECUTABLE FILES "/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Source/LaboOpdracht1")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/LaboOpdracht1" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/LaboOpdracht1")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -61,5 +61,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/pi/lesEmbedded2/Opdracht1/PJ_RPI/Examples/LaboOpdracht1/Source/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,18 +1,24 @@
 #include "PJ_RPI.h"
-//#include <stdio.h>
-//#include <stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <mysql/mysql.h>
 //#include <string.h>
 
-#define GPIO_READ(g)  *(gpio.addr + 13) &= (1<<(g))
+//#define GPIO_READ(g) *(gpio.addr + 13) &= (1 << (g))
 
 int main()
 {
+	if (map_peripheral(&gpio) == -1)
+	{
+		printf("Failed to map the physical GPIO registers into the virtual memory space.\n");
+		return -1;
+	}
+
 	MYSQL *conn;
 	MYSQL_RES *res;
 	MYSQL_ROW row;
 
-	char *server = "andriesraspi";
+	char *server = "localhost";
 	char *user = "pi";
 	char *password = "RaspiAndries"; /* set me first */
 	char *database = "Opdracht1GPIO";
@@ -40,18 +46,30 @@ int main()
 	while ((row = mysql_fetch_row(res)) != NULL)
 		printf("%s \n", row[0]);
 
-	// Define gpio 17 as output
-	INP_GPIO(17);
-	OUT_GPIO(17);
+	//Define gpio 15 as output
+	INP_GPIO(3);
 
 	while (1)
 	{
-		// Toggle 17 (blink a led!)
-		GPIO_SET = 1 << 17;
-		sleep(1);
+		printf("%d\n",GPIO_READ(3));
+		if (GPIO_READ(3))
+		{
+			printf("on");
+			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('1', '15')")))
+			{
+				fprintf(stderr, "%s\n", mysql_error(conn));
+			}
+		}
+		else
+		{
+			printf("off");
+			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('0', '15')")))
+			{
+				fprintf(stderr, "%s\n", mysql_error(conn));
+			}
+		}
 
-		GPIO_CLR = 1 << 17;
-		sleep(1);
+		sleep(10);
 	}
 
 	/* close connection */
