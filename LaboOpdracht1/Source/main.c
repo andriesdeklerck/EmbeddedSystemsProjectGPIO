@@ -54,22 +54,22 @@ int main()
 		printf("%d\n",GPIO_READ(3));
 		if (GPIO_READ(3))
 		{
-			printf("on");
-			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('1', '15')")))
+			printf("on\n");
+			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('1', '3')")))
 			{
 				fprintf(stderr, "%s\n", mysql_error(conn));
 			}
 		}
 		else
 		{
-			printf("off");
-			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('0', '15')")))
+			printf("off\n");
+			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('0', '3')")))
 			{
 				fprintf(stderr, "%s\n", mysql_error(conn));
 			}
 		}
 
-		sleep(10);
+		sleep(1);
 	}
 
 	/* close connection */
