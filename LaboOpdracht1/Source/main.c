@@ -46,15 +46,31 @@ int main()
 	while ((row = mysql_fetch_row(res)) != NULL)
 		printf("%s \n", row[0]);
 
-	//Define gpio 15 as output
+	//Define gpio 9 as input
+	INP_GPIO(9);
 	INP_GPIO(3);
 
 	while (1)
 	{
-		printf("%d\n",GPIO_READ(3));
+		if (GPIO_READ(9))
+		{
+			printf("Pin 9: on\n");
+			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('1', '9')")))
+			{
+				fprintf(stderr, "%s\n", mysql_error(conn));
+			}
+		}
+		else
+		{
+			printf("Pin 9: off\n");
+			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('0', '9')")))
+			{
+				fprintf(stderr, "%s\n", mysql_error(conn));
+			}
+		}
 		if (GPIO_READ(3))
 		{
-			printf("on\n");
+			printf("Pin 3: on\n");
 			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('1', '3')")))
 			{
 				fprintf(stderr, "%s\n", mysql_error(conn));
@@ -62,24 +78,19 @@ int main()
 		}
 		else
 		{
-			printf("off\n");
+			printf("Pin 3: off\n");
 			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('0', '3')")))
 			{
 				fprintf(stderr, "%s\n", mysql_error(conn));
 			}
 		}
 
-		sleep(1);
+		sleep(10);
 	}
 
 	/* close connection */
 	//mysql_free_result(res);
 	mysql_close(conn);
-	if (map_peripheral(&gpio) == -1)
-	{
-		printf("Failed to map the physical GPIO registers into the virtual memory space.\n");
-		return -1;
-	}
 
 	return 0;
 }
