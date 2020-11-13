@@ -169,6 +169,33 @@ LaboOpdracht1/fast:
 	$(MAKE) -f CMakeFiles/LaboOpdracht1.dir/build.make CMakeFiles/LaboOpdracht1.dir/build
 .PHONY : LaboOpdracht1/fast
 
+PJ_RPI.o: PJ_RPI.c.o
+
+.PHONY : PJ_RPI.o
+
+# target to build an object file
+PJ_RPI.c.o:
+	$(MAKE) -f CMakeFiles/LaboOpdracht1.dir/build.make CMakeFiles/LaboOpdracht1.dir/PJ_RPI.c.o
+.PHONY : PJ_RPI.c.o
+
+PJ_RPI.i: PJ_RPI.c.i
+
+.PHONY : PJ_RPI.i
+
+# target to preprocess a source file
+PJ_RPI.c.i:
+	$(MAKE) -f CMakeFiles/LaboOpdracht1.dir/build.make CMakeFiles/LaboOpdracht1.dir/PJ_RPI.c.i
+.PHONY : PJ_RPI.c.i
+
+PJ_RPI.s: PJ_RPI.c.s
+
+.PHONY : PJ_RPI.s
+
+# target to generate assembly for a file
+PJ_RPI.c.s:
+	$(MAKE) -f CMakeFiles/LaboOpdracht1.dir/build.make CMakeFiles/LaboOpdracht1.dir/PJ_RPI.c.s
+.PHONY : PJ_RPI.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -209,6 +236,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... PJ_RPI.o"
+	@echo "... PJ_RPI.i"
+	@echo "... PJ_RPI.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

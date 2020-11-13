@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/LaboOpdracht1.dir/main.c.o"
+  "CMakeFiles/LaboOpdracht1.dir/PJ_RPI.c.o"
   "LaboOpdracht1.pdb"
   "LaboOpdracht1"
 )

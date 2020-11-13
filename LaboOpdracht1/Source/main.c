@@ -46,24 +46,25 @@ int main()
 	while ((row = mysql_fetch_row(res)) != NULL)
 		printf("%s \n", row[0]);
 
-	//Define gpio 9 as input
-	INP_GPIO(9);
+	//Define gpio 5 as input
+	INP_GPIO(5);
 	INP_GPIO(2);
 
 	while (1)
 	{
-		if (GPIO_READ(9))
+		printf("%x\n",BCM2708_PERI_BASE);
+		if (GPIO_READ(5))
 		{
-			printf("Pin 9: on\n");
-			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('1', '9')")))
+			printf("Pin 5: on\n");
+			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('1', '5')")))
 			{
 				fprintf(stderr, "%s\n", mysql_error(conn));
 			}
 		}
 		else
 		{
-			printf("Pin 9: off\n");
-			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('0', '9')")))
+			printf("Pin 5: off\n");
+			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('0', '5')")))
 			{
 				fprintf(stderr, "%s\n", mysql_error(conn));
 			}

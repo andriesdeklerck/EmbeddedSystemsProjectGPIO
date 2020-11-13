@@ -1,1 +1,1 @@
-/usr/bin/cc   -rdynamic CMakeFiles/LaboOpdracht1.dir/main.c.o  -o LaboOpdracht1 -lPJ_RPI -lmariadb 
+/usr/bin/cc   -rdynamic CMakeFiles/LaboOpdracht1.dir/main.c.o CMakeFiles/LaboOpdracht1.dir/PJ_RPI.c.o  -o LaboOpdracht1 -lmariadb 
