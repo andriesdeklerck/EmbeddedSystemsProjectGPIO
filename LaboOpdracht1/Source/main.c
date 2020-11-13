@@ -1,4 +1,4 @@
-#include "PJ_RPI.h"
+#include "./PJ_RPI.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <mysql/mysql.h>
@@ -48,7 +48,7 @@ int main()
 
 	//Define gpio 9 as input
 	INP_GPIO(9);
-	INP_GPIO(3);
+	INP_GPIO(2);
 
 	while (1)
 	{
@@ -68,18 +68,18 @@ int main()
 				fprintf(stderr, "%s\n", mysql_error(conn));
 			}
 		}
-		if (GPIO_READ(3))
+		if (GPIO_READ(2))
 		{
-			printf("Pin 3: on\n");
-			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('1', '3')")))
+			printf("Pin 2: on\n");
+			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('1', '2')")))
 			{
 				fprintf(stderr, "%s\n", mysql_error(conn));
 			}
 		}
 		else
 		{
-			printf("Pin 3: off\n");
-			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('0', '3')")))
+			printf("Pin 2: off\n");
+			if (mysql_query(conn, ("INSERT INTO TabelOpdracht1 (Level, Pin) VALUES ('0', '2')")))
 			{
 				fprintf(stderr, "%s\n", mysql_error(conn));
 			}
